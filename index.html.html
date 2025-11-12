@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RivalScoop - Competitive Intelligence for B2B SaaS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0F766E;
+            text-decoration: none;
+        }
+        
+        /* CTA Button */
+        .cta {
+            display: inline-block;
+            background: #0F766E;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            border-radius: 6px;
+            margin: 20px 0;
+            transition: all 0.2s ease;
+        }
+        
+        .cta:hover {
+            background: #134E4A;
+            transform: translateY(-2px);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: #0F766E;
+            border: 2px solid #0F766E;
+        }
+        
+        .cta-secondary:hover {
+            background: #0F766E;
+            color: white;
+        }
+        
+        /* Trust elements */
+        .trust {
+            font-size: 0.95rem;
+            color: #444;
+            margin: 10px 0;
+        }
+        
+        /* List styling */
+        .checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .checklist li {
+            font-size: 1.1rem;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            color: #10B981;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .crosslist li:before {
+            content: "✗";
+            color: #EF4444;
+        }
+        
+        /* Alert box */
+        .alert {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .alert-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        /* Sample brief */
+        .sample-brief {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .sample-brief h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        
+        .brief-item {
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .brief-item:last-child {
+            border-bottom: none;
+        }
+        
+        .brief-company {
+            font-weight: 700;
+            color: #F97316;
+            margin-bottom: 5px;
+        }
+        
+        .brief-action {
+            color: #059669;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        /* Pricing */
+        .price-box {
+            border: 3px solid #0F766E;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            background: #F0FDFA;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0F766E;
+        }
+        
+        .price-period {
+            font-size: 1.2rem;
+            color: #444;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #444;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.875rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 20px 16px;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Subtle animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(15, 118, 110, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(15, 118, 110, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">RivalScoop</a>
+        </nav>
+        
+        <!-- Hero -->
+        <section>
+            <h1>Your Competitor Just Changed Their Pricing.<br>Did You Notice?</h1>
+            <p class="lead">Get a weekly intelligence brief that tells you exactly what competitors did, why it matters, and what to do about it.</p>
+            <a href="https://tally.so/r/YOUR-FORM-ID" class="cta pulse">Start Your 14-Day Trial →</a>
+            <p class="trust">$199/month • 5-minute weekly read • Cancel anytime</p>
+        </section>
+        
+        <!-- Problem -->
+        <section>
+            <h2>Right Now, You're Missing Critical Moves</h2>
+            <p>Your team spends 8-10 hours every week manually checking competitor websites, reading their blogs, monitoring their social media, tracking their hires.</p>
+            <p>And you're still getting blindsided in sales calls when prospects mention features you didn't know existed.</p>
+            <ul class="checklist crosslist">
+                <li>Monday: Check 5 competitor websites manually</li>
+                <li>Tuesday: Remember you forgot to check their pricing pages</li>
+                <li>Wednesday: Scramble to read their latest blog post before a call</li>
+                <li>Thursday: Hear from a prospect that they launched a new feature</li>
+                <li>Friday: Promise yourself you'll build a better tracking system next week</li>
+            </ul>
+            <p><strong>This isn't sustainable. And it's costing you deals.</strong></p>
+        </section>
+        
+        <!-- Solution -->
+        <section>
+            <h2>One Email. Five Minutes. Zero Surprises.</h2>
+            <p>Every Monday morning, you get a brief covering your top competitors. No fluff. No 40-slide deck. Just answers to three questions:</p>
+            <ul class="checklist">
+                <li>What did your competitors do this week?</li>
+                <li>Why does it matter to your business?</li>
+                <li>What should you do about it?</li>
+            </ul>
+            <div class="alert">
+                <div class="alert-title">⏰ Delivered every Monday at 8 AM</div>
+                <p>Start your week with intelligence, not guesswork.</p>
+            </div>
+        </section>
+        
+        <!-- Sample -->
+        <section>
+            <h2>Your Monday Morning Intelligence:</h2>
+            <div class="sample-brief">
+                <h3>📊 RIVALSCOOP WEEKLY BRIEF - January 27, 2025</h3>
+                
+                <div class="brief-item">
+                    <div class="brief-company" style="color: #DC2626;">🔴 HIGH IMPACT: COMPETITOR A</div>
+                    <div><strong>What:</strong> Slashed enterprise pricing 30% (50+ seats)</div>
+                    <div><strong>Why this matters:</strong> They're buying market share. Expect aggressive sales tactics.</div>
+                    <div class="brief-action">→ Your Move: Arm sales with ROI calculator showing 3-year TCO advantage</div>
+                </div>
+                
+                <div class="brief-item">
+                    <div class="brief-company" style="color: #F97316;">🟡 WATCH CLOSELY: COMPETITOR B</div>
+                    <div><strong>What:</strong> AI features now free for all users (was $10/user premium)</div>
+                    <div><strong>Signal:</strong> Commoditizing AI features to expand user base</div>
+                    <div class="brief-action">→ Consider: Bundle AI differently or emphasize accuracy over availability</div>
+                </div>
+                
+                <div class="brief-item">
+                    <div class="brief-company" style="color: #059669;">🟢 OPPORTUNITY: COMPETITOR C</div>
+                    <div><strong>What:</strong> Acquired presentation software startup</div>
+                    <div><strong>Reading:</strong> Feature bloat strategy - jack of all trades</div>
+                    <div class="brief-action">→ Leverage: Position as "focused on what matters"</div>
+                </div>
+                
+                <div class="brief-item" style="border-bottom: none;">
+                    <div><strong>ONE NUMBER: 8</strong></div>
+                    <div>New enterprise sales roles posted by Competitor A this month (vs 2 last month)</div>
+                    <div><strong>Signal:</strong> Aggressive upmarket expansion underway</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: #444; margin-top: 20px;">
+                <em>Note: Format evolves based on what matters most each week</em>
+            </p>
+            <a href="https://tally.so/r/YOUR-FORM-ID" class="cta">See What You're Missing →</a>
+        </section>
+        
+        <!-- Who -->
+        <section>
+            <h2>Perfect For Series A/B SaaS Teams</h2>
+            <p>You're between $3M-$20M ARR. You have 3-5 clear competitors. You know you should track them better, but you don't have time for another dashboard or a $50K enterprise platform.</p>
+            <p>You just need someone to tell you what actually matters.</p>
+            <ul class="checklist">
+                <li>Founded teams doing competitive research themselves</li>
+                <li>VPs of Marketing preparing for board meetings</li>
+                <li>Product teams avoiding feature parity traps</li>
+                <li>Sales teams tired of being surprised on calls</li>
+            </ul>
+        </section>
+        
+        <!-- Pricing -->
+        <section>
+            <h2>Simple Pricing. Serious Intelligence.</h2>
+            <div class="price-box">
+                <div class="price">$199</div>
+                <div class="price-period">per month</div>
+                <ul class="checklist" style="text-align: left; margin: 20px 0;">
+                    <li>Track up to 5 competitors</li>
+                    <li>Weekly email briefs</li>
+                    <li>Actionable recommendations</li>
+                    <li>No contracts or setup fees</li>
+                </ul>
+                <a href="https://tally.so/r/YOUR-FORM-ID" class="cta" style="width: 100%; text-align: center;">Start 14-Day Free Trial</a>
+                <p class="trust">Card required • Cancel anytime</p>
+            </div>
+            <p style="text-align: center; color: #666;">
+                Need to track 10+ competitors? <a href="/cdn-cgi/l/email-protection#c3a5b1a2ada0aab083b1aab5a2afb0a0acacb3eda0acae" style="color: #0F766E;">Contact us</a> for custom pricing.
+            </p>
+        </section>
+        
+        <!-- FAQ -->
+        <section>
+            <h2>Quick Questions</h2>
+            
+            <p><strong>Why email instead of another dashboard?</strong></p>
+            <p>Because you already check email. You don't need another tool to log into. The insights come to you.</p>
+            
+            <p><strong>How do you track my competitors?</strong></p>
+            <p>We monitor what matters most: product launches, pricing changes, strategic hires, feature updates, and market positioning shifts. You get the signal, not the noise.</p>
+            
+            <p><strong>Can I change competitors later?</strong></p>
+            <p>Yes. Update your tracked competitors anytime. We recommend focusing on your 3-5 core rivals for the most actionable intelligence.</p>
+            
+            <p><strong>What if I need to cancel?</strong></p>
+            <p>Cancel anytime. No questions, no friction. Once you know what competitors are doing weekly, going back to guessing feels risky.</p>
+        </section>
+        
+        <!-- Final CTA -->
+        <section style="text-align: center; margin-top: 80px; padding: 40px; background: #F9FAFB; border-radius: 8px;">
+            <h2>Your Competitors Are Already Tracking You</h2>
+            <p class="lead">Isn't it time you returned the favor?</p>
+            <a href="https://tally.so/r/YOUR-FORM-ID" class="cta pulse">Start Your 14-Day Trial →</a>
+        </section>
+        
+        <footer>
+            <p>RivalScoop • Competitive Intelligence for Growth-Stage SaaS</p>
+            <p><a href="/cdn-cgi/l/email-protection#a9c1ccc5c5c6e9dbc0dfc8c5dacac6c6d987cac6c4" style="co
