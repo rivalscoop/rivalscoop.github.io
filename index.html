@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RivalScoop - Competitive Intelligence for B2B SaaS</title>
     <style>
+        :root {
+            --primary: #0F766E;
+            --primary-dark: #115E59;
+            --primary-light: #F0FDFA;
+            --text-main: #111827;
+            --text-secondary: #4B5563;
+            --bg-off-white: #F9FAFB;
+            --border: #E5E7EB;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,47 +22,49 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
+            color: var(--text-main);
             background: #ffffff;
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
         /* Typography */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             line-height: 1.1;
             font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            color: #111;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
         
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 700;
             margin-top: 60px;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
         
         p {
             font-size: 1.125rem;
             margin-bottom: 20px;
-            color: #444;
+            color: var(--text-secondary);
         }
         
         .lead {
             font-size: 1.35rem;
             font-weight: 400;
-            color: #333;
-            margin-bottom: 30px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.5;
         }
         
         /* Navigation */
@@ -61,269 +73,112 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
-        }
-        
-        .status-badge {
-            background: #eee;
-            color: #666;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
+            letter-spacing: -0.01em;
         }
         
         /* CTA Button */
         .cta {
             display: inline-block;
-            background: #000;
+            background: var(--primary);
             color: white;
             padding: 16px 32px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.125rem;
-            border-radius: 6px;
+            border-radius: 8px;
             margin: 10px 0;
             transition: all 0.2s ease;
-            width: 100%;
-            text-align: center;
-        }
-        
-        @media (min-width: 640px) {
-            .cta { width: auto; }
+            box-shadow: 0 4px 6px -1px rgba(15, 118, 110, 0.2);
         }
         
         .cta:hover {
-            background: #333;
-            transform: translateY(-2px);
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px -1px rgba(15, 118, 110, 0.3);
         }
         
         /* Trust elements */
         .trust {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 15px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: #10B981;
-            border-radius: 50%;
-            display: inline-block;
+        .check-icon {
+            color: var(--primary);
+            font-weight: bold;
         }
         
         /* Lists */
         .checklist {
             list-style: none;
-            margin: 20px 0;
+            margin: 24px 0;
         }
         
         .checklist li {
             font-size: 1.1rem;
             margin: 12px 0;
-            padding-left: 30px;
+            padding-left: 32px;
             position: relative;
+            color: var(--text-main);
         }
         
         .checklist li:before {
-            content: "→";
-            color: #000;
+            content: "✓";
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
         
-        /* The "Secret File" Look */
+        /* The "Asset" - Clean Executive Brief Style */
         .sample-brief {
             background: #fff;
-            border: 1px solid #e5e7eb;
-            border-top: 4px solid #000;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            padding: 30px;
-            margin: 40px 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 48px 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
         
         .brief-header {
-            border-bottom: 2px solid #000;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
         }
         
-        .brief-title {
-            font-family: 'Courier New', monospace;
+        .brief-logo {
             font-weight: 700;
-            font-size: 0.9rem;
-            color: #666;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
             text-transform: uppercase;
-        }
-        
-        .brief-date {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #000;
+            letter-spacing: 0.05em;
         }
         
         .brief-item {
-            margin-bottom: 25px;
-            padding-left: 15px;
-            border-left: 3px solid #eee;
+            margin-bottom: 24px;
         }
         
-        .brief-item.high-priority {
-            border-left-color: #DC2626;
-            background: #FEF2F2;
-            padding: 15px;
-            margin-left: 0;
-            border-radius: 0 4px 4px 0;
+        .brief-item:last-child {
+            margin-bottom: 0;
         }
         
-        .tag {
+        .pill {
             display: inline-block;
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        
-        .tag-red { background: #DC2626; color: white; }
-        .tag-gray { background: #E5E7EB; color: #374151; }
-        
-        /* Pricing Box */
-        .price-box {
-            background: #F9FAFB;
-            border: 1px solid #E5E7EB;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .price {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #000;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-        
-        /* Footer */
-        footer {
-            margin-top: 80px;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        
-        /* Mobile Tweaks */
-        @media (max-width: 640px) {
-            h1 { font-size: 2rem; }
-            .brief-header { flex-direction: column; align-items: flex-start; gap: 5px; }
-        }
-
-        .highlight {
-            background: #FEF3C7;
-            padding: 0 4px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">RivalScoop</a>
-            <span class="status-badge">Private Beta</span>
-        </nav>
-        
-        <section>
-            <h1>Your competitors are hiding things from their changelog. <span class="highlight">We find them.</span></h1>
-            <p class="lead">We track the silent pricing changes, hidden feature removals, and stealth hires that dashboards miss.</p>
-            
-            <a href="https://tally.so/r/68JVJP" class="cta">Get a Free Intelligence Brief</a>
-            
-            <div class="trust">
-                <span class="dot"></span>
-                <span>Includes White-Glove Setup by Analyst</span>
-            </div>
-        </section>
-        
-        <section>
-            <div class="sample-brief">
-                <div class="brief-header">
-                    <div class="brief-title">CONFIDENTIAL // WEEKLY BRIEF</div>
-                    <div class="brief-date">FRIDAY, DEC 5, 2025</div>
-                </div>
-                
-                <div class="brief-item high-priority">
-                    <span class="tag tag-red">THREAT DETECTED</span>
-                    <p><strong>Competitor X hidden pricing update:</strong></p>
-                    <p style="margin-bottom: 10px;">My archives show they removed the "Contact Sales" button for Enterprise plans and replaced it with a "$599/mo" flat rate. They are moving down-market to undercut your price floor.</p>
-                    <p style="font-size: 0.95rem; color: #DC2626;"><strong>→ RECOMMENDATION:</strong> Update your battlecard to emphasize your "Managed Onboarding" value add.</p>
-                </div>
-                
-                <div class="brief-item">
-                    <span class="tag tag-gray">STRATEGY SHIFT</span>
-                    <p><strong>Competitor Y hiring signal:</strong></p>
-                    <p>They just posted a role for "Head of PLG (Product Led Growth)." Expect a Free Trial launch in Q1 to compete with your demo-request flow.</p>
-                </div>
-                
-                <div class="brief-item">
-                    <span class="tag tag-gray">PRODUCT</span>
-                    <p><strong>Competitor Z feature deprecation:</strong></p>
-                    <p>They quietly removed the "Salesforce Integration" from their Pro tier. It is now Enterprise only.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Stop doing "Competitive Research"</h2>
-            <p>You don't need another dashboard. You don't need more data.</p>
-            <p>You need to know <strong>what changed</strong> and <strong>why it hurts you</strong>.</p>
-            <ul class="checklist">
-                <li><strong>No Login Required:</strong> Intelligence delivered to your inbox every Friday.</li>
-                <li><strong>No Setup:</strong> You send us the URL. We configure the scrapers.</li>
-                <li><strong>No Noise:</strong> We filter out the minor font changes and bug fixes. You only see strategy.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <div class="price-box">
-                <p style="text-transform: uppercase; font-weight: 700; color: #666; font-size: 0.9rem;">Founding Member Access</p>
-                <div class="price">$199</div>
-                <p style="margin-bottom: 20px;">per month</p>
-                
-                <p style="margin-bottom: 30px; font-size: 1.1rem;">Includes <strong>Concierge Setup</strong> for up to 5 competitors.</p>
-                
-                <a href="https://tally.so/r/68JVJP" class="cta">Start Your Intel Stream</a>
-                <p style="font-size: 0.9rem; color: #888; margin-top: 15px;">Fully refunded if we don't find a threat in 30 days.</p>
-            </div>
-        </section>
-        
-        <footer>
-            <p>© 2025 RivalScoop. Operating in Stealth.</p>
-            <p><a href="mailto:hello@rivalscoop.com" style="color: #666;">hello@rivalscoop.com</a></p>
-        </footer>
-    </div>
-</body>
-</html>
+            padding
