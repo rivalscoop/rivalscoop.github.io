@@ -23,6 +23,10 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html, body {
+            overflow-x: hidden; /* SAFETY FIX: Prevents layout breaking */
+        }
+
         body {
             font-family: var(--body-font);
             line-height: 1.6;
@@ -243,3 +247,154 @@
             border: 2px solid var(--text-main);
             padding: 40px;
             text-align: center;
+            background: #FFF;
+        }
+
+        .price {
+            font-family: var(--mono-font);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .comparison-grid, .filter-grid { grid-template-columns: 1fr; gap: 20px; }
+            .dossier-wrapper { padding: 20px; transform: none; }
+            .cta { width: 100%; text-align: center; }
+            .cta-secondary { display: block; text-align: center; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav>
+            <a href="#" class="logo">
+                <span>⦿</span> RIVAL SCOOP
+            </a>
+            <a href="https://tally.so/r/68JVJP" style="text-decoration: none; color: var(--text-main); font-weight: 600; font-family: var(--mono-font);">LOGIN</a>
+        </nav>
+
+        <section>
+            <span class="hero-tag">Weekly Intelligence Briefing</span>
+            <h1>We Decode Competitor Pivots.</h1>
+            <p>Your competitors are hiding their strategy in plain sight. We track the structural website changes they don't want you to notice.</p>
+            <div style="margin-top: 32px;">
+                <a href="https://tally.so/r/68JVJP" class="cta">Start Intelligence Feed</a>
+                <a href="#intel" class="cta-secondary">See Sample Intel</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #666; font-family: var(--mono-font);">Free 14-day trial</p>
+        </section>
+
+        <section id="intel" style="background: #E7E5E4; margin: 0 -100vw; padding: 60px 100vw;">
+            <div class="container" style="padding: 0;">
+                <h2 style="border-color: transparent;">The Verdict. Not The Noise.</h2>
+                <p>Most tools sell you pixels (they changed a button). We sell you the strategic implication.</p>
+                
+                <div class="dossier-wrapper">
+                    <div class="dossier-stamp">CONFIDENTIAL // EYES ONLY</div>
+                    
+                    <div class="dossier-header">
+                        <span class="mono">SUBJECT: FIREFLIES.AI</span>
+                        <span class="mono">DATE: DEC 2025</span>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 20px; font-size: 1.4rem;">DETECTED PIVOT: Retreat from "AI Agent" Narrative</h3>
+                    
+                    <div class="comparison-grid">
+                        <div class="snapshot-box">
+                            <span class="snapshot-label">AUGUST 2025 (PREVIOUS)</span>
+                            <div style="font-size: 1.1rem; line-height: 1.4;">
+                                Headline: "Your AI <span class="strike-mark">Teammate</span>"<br><br>
+                                <span style="font-size: 0.9rem;">Features: "Agents", "Workflows"</span>
+                            </div>
+                        </div>
+                        <div class="snapshot-box" style="border-color: var(--text-main); background: #FFF;">
+                            <span class="snapshot-label" style="color: var(--text-main);">DECEMBER 2025 (CURRENT)</span>
+                            <div style="font-size: 1.1rem; line-height: 1.4; font-weight: 600;">
+                                Headline: "#1 AI <span class="highlight-mark">Notetaker</span>"<br><br>
+                                <span style="font-size: 0.9rem; font-weight: 400;">Features: "Meeting Notes", "Transcripts"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verdict-box">
+                        <span class="verdict-label">RIVALSCOOP INTELLIGENCE VERDICT:</span>
+                        <p style="margin: 0; color: #000; font-weight: 500;">
+                            <strong>Signal:</strong> Betting on Commodity Dominance.<br>
+                            They realized "Agent" confuses buyers who just want simple notes. They are pivoting back to the entry-level to win on volume.
+                        </p>
+                    </div>
+
+                    <div style="font-family: var(--mono-font); font-size: 0.85rem; color: var(--accent-red); margin-top: 15px; border-top: 1px dotted var(--accent-red); padding-top: 10px;">
+                        >>> STRATEGIC FORK: THEY ABANDONED THE "AGENT" LANE. <br>
+                        <strong>OPTION A:</strong> FOLLOW THEM (If you sell a tool, simplify your pitch).<br>
+                        <strong>OPTION B:</strong> ATTACK THEM (If you sell true Autonomy, claim the premium market they just vacated).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>The "Keep vs. Kill" Filter</h2>
+            <p>You don't need more data. You need a filter. We discard 90% of changes to send you the 10% that threaten your roadmap.</p>
+            
+            <div class="filter-grid">
+                <div class="filter-col">
+                    <h3 style="color: #9CA3AF;">❌ WE KILL (NOISE)</h3>
+                    <ul class="filter-list">
+                        <li class="kill-item">Marketing fluff ("Faster" -> "Better")</li>
+                        <li class="kill-item">Menu reorganization</li>
+                        <li class="kill-item">Conference banners & webinar popups</li>
+                        <li class="kill-item">Holiday greetings</li>
+                        <li class="kill-item">Generic "We're Hiring" posts</li>
+                    </ul>
+                </div>
+                
+                <div class="filter-col">
+                    <h3 style="color: var(--accent-red);">✅ WE KEEP (SIGNAL)</h3>
+                    <ul class="filter-list">
+                        <li><strong>Bundling:</strong> Paid features becoming free</li>
+                        <li><strong>Pivots:</strong> Industry-specific language removal</li>
+                        <li><strong>New Wedges:</strong> Low-end product launches</li>
+                        <li><strong>Pricing:</strong> Hidden enterprise tier changes</li>
+                        <li><strong>Positioning:</strong> "Platform" vs "Point Solution" shifts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <div class="pricing-card">
+                <h2>Intelligence As A Service</h2>
+                <div class="price">$199<span style="font-size: 1rem; color: #666; font-weight: 400;">/mo</span></div>
+                
+                <ul style="list-style: none; margin-bottom: 30px; text-align: left; display: inline-block;">
+                    <li style="margin-bottom: 10px;">✓ Monitor Top 5 Competitors</li>
+                    <li style="margin-bottom: 10px;">✓ Weekly "Cynical" Briefings</li>
+                    <li style="margin-bottom: 10px;">✓ Zero-Login Email Delivery</li>
+                    <li style="margin-bottom: 10px;">✓ Battlecard Visuals for Internal Use</li>
+                </ul>
+                <br>
+                <a href="https://tally.so/r/68JVJP" class="cta">Start 14-Day Free Trial</a>
+                <p style="margin-top: 20px; font-size: 0.9rem;">
+                    Need to track 10+? <a href="mailto:hello@rivalscoop.com" style="color: var(--text-main); font-weight: bold;">Contact Intelligence Team</a>
+                </p>
+            </div>
+        </section>
+
+        <footer style="border-top: 1px solid #E5E5E5; margin-top: 60px; padding: 40px 0; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+            <p>© 2025 RivalScoop Intelligence Team. All rights reserved.</p>
+            <div style="margin-top: 20px;">
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Privacy Protocol</a> | 
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">Terms of Engagement</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
